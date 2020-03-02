@@ -1,8 +1,10 @@
 # React-Chrome-Extension: Collapse Side Panel
 
-A simple React implement Chrome extension with collapse features. Inspired by [satendra02/react-chrome-extension](https://github.com/satendra02/react-chrome-extension). Integrated with [BlueprintJs](https://blueprintjs.com/docs/)
+A simple React implement Chrome extension with collapse features. Inspired by [satendra02/react-chrome-extension](https://github.com/satendra02/react-chrome-extension). Integrated with [BlueprintJs](https://blueprintjs.com/docs/). Able to toogle sidepanel by extension icon.
 
-![](screenshots/ezgif-7-d8627bf3930a.gif)
+Default will open on all url page.
+
+![](screenshots/lossy-compressed.gif)
 
 ## Demo
 ### [CodeSanbox](https://codesandbox.io/s/react-chrome-extension-collapsesidepanel-ww4lm)
@@ -11,7 +13,6 @@ A simple React implement Chrome extension with collapse features. Inspired by [s
 ## Build
 ``` bash
 git clone git@github.com:vincecao/React-Chrome-Extension-CollapseSidePanel.git
-
 cd React-Chrome-Extension-CollapseSidePanel
 
 yarn install
