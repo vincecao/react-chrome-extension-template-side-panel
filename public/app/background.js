@@ -1,12 +1,11 @@
-/* eslint-disable no-undef */
 let windowId = 0;
 
 const CONTEXT_MENU_ID = "contextMenu";
 const CONTEXT_MENU_TITLE = "My menu context";
-let chromeWindows = chrome.windows;
+const chromeWindows = chrome.windows;
 
 // Called when the user clicks on the browser action
-chrome.browserAction.onClicked.addListener((tab) => {
+chrome.browserAction.onClicked.addListener((_tab) => {
   // Send a message to the active tab
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     let activeTab = tabs[0];
@@ -43,15 +42,15 @@ const ensureSendMessage = (tabId, message, callback) => {
 };
 
 // window
-const closeIfExist = (chromeWindows) => {
+function closeWindowsIfExist(chromeWindows) {
   if (windowId > 0) {
     chromeWindows.remove(windowId);
     windowId = chromeWindows.WINDOW_ID_NONE;
   }
 };
 
-const popWindow = (type, screen, chromeWindows) => {
-  closeIfExist(chromeWindows);
+function popWindow(type, screen, chromeWindows) {
+  closeWindowsIfExist(chromeWindows);
   let width = 1000;
   let height = 800;
   const options = {

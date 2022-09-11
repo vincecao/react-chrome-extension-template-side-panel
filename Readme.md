@@ -14,7 +14,7 @@ Inspired by [satendra02/react-chrome-extension](https://github.com/satendra02/re
 
 ``` bash
 git clone git@github.com:vincecao/React-Chrome-Extension-CollapseSidePanel.git
-cd React-Chrome-Extension-CollapseSidePanel
+cd react-chrome-extension-collapse-side-panel
 
 yarn install
 

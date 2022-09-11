@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-stone-200 dark:bg-stone-900 border rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-stone-400 hover:bg-stone-500 dark:bg-stone-700 hover:dark:bg-stone-600 rounded-full;
+}

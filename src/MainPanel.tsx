@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import 'normalize.css';
-import '@blueprintjs/core/lib/css/blueprint.css';
-import '@blueprintjs/icons/lib/css/blueprint-icons.css';
-import { __urls__ } from './const';
-import { MyMenuBtn, MyModeBtn } from './extensionLayout/ShrinkBtnComponent';
+import React, { ReactElement, useState } from 'react';
+import { Button } from '@blueprintjs/core';
+import { URLS } from './const';
 
-const MainPanel = (props) => {
-  let { toggle } = props;
+export function MyModeBtn({ isToggle, onClick }): ReactElement {
+  return <Button active={!isToggle} minimal onClick={onClick} icon={`caret-${!isToggle ? 'left' : 'right'}`} />;
+}
+
+export default function MainPanel({ toggle }: { toggle: () => void }): ReactElement {
   const [isToggle, setIsToggle] = useState(true);
   const [index, setIndex] = useState(0);
 
@@ -32,8 +32,8 @@ const MainPanel = (props) => {
           transition: 'all 0.3s ease',
           overflow: 'hidden',
         }}
-        title={__urls__[index].name}
-        src={__urls__[index].url}
+        title={URLS[index].name}
+        src={URLS[index].url}
       />
       <div
         style={{
@@ -48,21 +48,8 @@ const MainPanel = (props) => {
           transition: 'all 0.3s ease',
         }}
       >
-        {__urls__.map((url, _index) => {
-          return (
-            <MyMenuBtn
-              isFetch={false}
-              icon={url.icon}
-              alt={url.name}
-              intent={url.intent}
-              active={_index === index}
-              onClick={() => {
-                setIndex(_index);
-                setIsToggle(!isToggle);
-                toggle();
-              }}
-            />
-          );
+        {URLS.map((url, _index) => {
+          return <button>{url.name}</button>;
         })}
       </div>
       <div
@@ -85,6 +72,4 @@ const MainPanel = (props) => {
       </div>
     </div>
   );
-};
-
-export default MainPanel;
+}

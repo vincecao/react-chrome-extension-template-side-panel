@@ -1,13 +1,11 @@
 {
-  "short_name": "extension",
-  "name": "myChrome-Extension",
+  "short_name": "side-panel-template",
+  "name": "side panel template",
   "version": "0.1.0",
-  "manifest_version": 2,
-  "icons": {},
+  "manifest_version": 3,
   "background": {
-    "scripts": ["app/background.js"]
+    "service_worker": "demo/background.js"
   },
-  "browser_action": {},
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
@@ -15,14 +13,11 @@
       "js": ["static/js/content.js"]
     }
   ],
-  "permissions": [
-    "contextMenus",
-    "tabs",
-    "identity",
-    "notifications",
-    "storage",
-    "activeTab"
-  ],
-  "web_accessible_resources": ["static/*"],
-  "content_security_policy": "script-src 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; object-src 'self'"
+  "permissions": ["contextMenus", "tabs", "identity", "notifications", "storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "demo/popup.html",
+    "default_icon": {}
+  },
+  "icons": {},
+  "options_page": "demo/options.html"
 }
