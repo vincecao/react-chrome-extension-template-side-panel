@@ -1,0 +1,5 @@
+#side-bar-extension-root {
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+}

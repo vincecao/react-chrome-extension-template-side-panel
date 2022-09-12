@@ -1,28 +1,18 @@
 {
-  "short_name": "extension",
-  "name": "myChrome-Extension",
-  "version": "0.1.0",
-  "manifest_version": 2,
-  "icons": {},
+  "short_name": "react-chrome-extension-template-side-panel",
+  "name": "React Chrome Extension Template: Side Panel",
+  "version": "0.2.0",
+  "manifest_version": 3,
   "background": {
-    "scripts": ["app/background.js"]
+    "service_worker": "background.js"
   },
-  "browser_action": {},
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "css": ["static/css/app.css"],
-      "js": ["static/js/content.js"]
+      "css": ["dist/index.4eeece91.css"],
+      "js": ["dist/index.6099912e.js"]
     }
   ],
-  "permissions": [
-    "contextMenus",
-    "tabs",
-    "identity",
-    "notifications",
-    "storage",
-    "activeTab"
-  ],
-  "web_accessible_resources": ["static/*"],
-  "content_security_policy": "script-src 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; object-src 'self'"
+  "permissions": ["storage", "scripting", "tabs"],
+  "icons": {}
 }
