@@ -1,16 +1,18 @@
 {
-  "name": "my-chrome-extension",
-  "version": "0.1.0",
+  "name": "react-chrome-extension-template-side-panel",
+  "version": "0.2.0",
   "license": "MIT",
-  "main": "index.tsx",
+  "source": "./src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "npm run style && parcel build index.html --public-url ./",
-    "style": "npx tailwindcss -i ./src/input.css -o ./dist/output.css",
-    "style:watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "prestart": "yarn style",
+    "start": "parcel --dist-dir ./public/dist",
+    "prebuild": "yarn style && rm -rf ./public/dist",
+    "build": "parcel build --dist-dir ./public/dist --no-content-hash" ,
+    "style": "npx tailwindcss -i ./src/input.css -o ./src/tailwindcss-output.css",
+    "style:watch": "yarn style -- --watch"
   },
   "dependencies": {
-    "@blueprintjs/core": "^4.9.4",
     "classnames": "^2.3.1",
     "react": "^18.2.0",
     "react-app-polyfill": "^3.0.0",
@@ -20,7 +22,10 @@
   "devDependencies": {
     "@types/react": "^18.0.19",
     "@types/react-dom": "^18.0.6",
-    "parcel": "1.12.3",
+    "parcel": "latest",
+    "postcss": "^8.4.16",
+    "postcss-nested": "^5.0.6",
+    "process": "^0.11.10",
     "tailwindcss": "^3.1.8",
     "typescript": "^4.8.3"
   }

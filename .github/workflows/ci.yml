@@ -1,0 +1,28 @@
+name: Publish Demo Page
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  # When a new commit is pushed to master branch, a demo site will be build and deployed 
+  deploy-demo-page:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Build Demo Page
+        run: |
+          yarn install --frozen-lockfile
+          yarn build
+      
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: demo
+          build_dir: public/dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

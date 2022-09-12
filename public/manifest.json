@@ -1,23 +1,18 @@
 {
-  "short_name": "side-panel-template",
-  "name": "side panel template",
-  "version": "0.1.0",
+  "short_name": "react-chrome-extension-template-side-panel",
+  "name": "React Chrome Extension Template: Side Panel",
+  "version": "0.2.0",
   "manifest_version": 3,
   "background": {
-    "service_worker": "demo/background.js"
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "css": ["static/css/app.css"],
-      "js": ["static/js/content.js"]
+      "css": ["dist/index.4eeece91.css"],
+      "js": ["dist/index.6099912e.js"]
     }
   ],
-  "permissions": ["contextMenus", "tabs", "identity", "notifications", "storage", "activeTab", "scripting"],
-  "action": {
-    "default_popup": "demo/popup.html",
-    "default_icon": {}
-  },
-  "icons": {},
-  "options_page": "demo/options.html"
+  "permissions": ["storage", "scripting", "tabs"],
+  "icons": {}
 }
