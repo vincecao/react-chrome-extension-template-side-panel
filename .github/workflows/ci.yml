@@ -16,7 +16,7 @@ jobs:
       - name: Build Demo Page
         run: |
           yarn install --frozen-lockfile
-          yarn build
+          yarn build -- --public-url /react-chrome-extension-template-side-panel/
       
       - name: Deploy to GitHub Pages
         if: success()
