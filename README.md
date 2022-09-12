@@ -4,6 +4,9 @@ A simple [React](https://reactjs.org/) implementation of a Chrome Extension Temp
 
 Check the demo in this [here](https://vince-amazing.com/react-chrome-extension-template-side-panel).
 
+https://user-images.githubusercontent.com/17363908/189584314-cfa11ac3-bac4-4726-963e-86a0e238fced.mp4
+
+
 ## Development
 ``` bash
 # clone the repo
@@ -19,6 +22,9 @@ yarn start
 # build the extension
 yarn build
 ```
+
+![2022-09-11_22-38](https://user-images.githubusercontent.com/17363908/189584329-04ed1cce-ec1e-4da8-8c06-4365385b87f2.png)
+
 
 ## Installation
 * After build process, open Chrome or any chromium based browser
