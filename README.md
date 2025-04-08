@@ -2,7 +2,7 @@
 
 A simple [React](https://reactjs.org/) implementation of a Chrome Extension Template for a foldable side panel. Using [Parcel](https://parceljs.org/), [TailwindCSS](https://tailwindcss.com/) and [TypeScript](https://www.typescriptlang.org/) for development. Optimized to fit most of the modern webpage and save setting to chrome storage. 
 
-Check the demo in this [here](https://vince-amazing.com/react-chrome-extension-template-side-panel).
+Check the demo in this [here](https://vincecao.github.io/react-chrome-extension-template-side-panel).
 
 https://user-images.githubusercontent.com/17363908/189584314-cfa11ac3-bac4-4726-963e-86a0e238fced.mp4
 
