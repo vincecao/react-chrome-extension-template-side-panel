@@ -236,6 +236,17 @@
     "@parcel/transformer-react-refresh-wrap" "2.7.0"
     "@parcel/transformer-svg" "2.7.0"
 
+"@parcel/config-webextension@2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@parcel/config-webextension/-/config-webextension-2.7.0.tgz#269af796601c58dd32779bb03f4b9014e214ed68"
+  integrity sha512-5OBhrRfsamI5oInv2APMgz9+qSqDhb07iR98qhRMYt2S34/Npj08vrUtqr2nZiiA5ypThT+FRtRjYAtiHPQMSQ==
+  dependencies:
+    "@parcel/config-default" "2.7.0"
+    "@parcel/packager-webextension" "2.7.0"
+    "@parcel/runtime-webextension" "2.7.0"
+    "@parcel/transformer-raw" "2.7.0"
+    "@parcel/transformer-webextension" "2.7.0"
+
 "@parcel/core@2.7.0":
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/@parcel/core/-/core-2.7.0.tgz#3310f48230bd618735f199f159f37e6b45ed2710"
@@ -475,6 +486,15 @@
     "@parcel/utils" "2.7.0"
     posthtml "^0.16.4"
 
+"@parcel/packager-webextension@2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@parcel/packager-webextension/-/packager-webextension-2.7.0.tgz#3b977acfa24d0ea44575dde4fb363071646863b3"
+  integrity sha512-HoGE/6S+beiFuLhYWUctA1UHtN1YIuTeqP3JitDwGEMz2iMaffajTP+8LNGqZjB3X+98rVYiNLdk0uEWUs70kw==
+  dependencies:
+    "@parcel/plugin" "2.7.0"
+    "@parcel/utils" "2.7.0"
+    nullthrows "^1.1.1"
+
 "@parcel/plugin@2.7.0":
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/@parcel/plugin/-/plugin-2.7.0.tgz#0211281025d02afbc5a23fba237b7aae02e34e51"
@@ -540,6 +560,15 @@
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/@parcel/runtime-service-worker/-/runtime-service-worker-2.7.0.tgz#352c3722ec635eee2898d9698541e3c1f53e8906"
   integrity sha512-uD2pAV0yV6+e7JaWH4KVPbG+zRCrxr/OACyS9tIh+Q/R1vRmh8zGM3yhdrcoiZ7tFOnM72vd6xY11eTrUsSVig==
+  dependencies:
+    "@parcel/plugin" "2.7.0"
+    "@parcel/utils" "2.7.0"
+    nullthrows "^1.1.1"
+
+"@parcel/runtime-webextension@2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@parcel/runtime-webextension/-/runtime-webextension-2.7.0.tgz#18580e5835c7610f08df547e9a627775fc594d6e"
+  integrity sha512-+2gGOOR3HUJGdsr/tUsJjs9tvlOsp2rTgGKt77+s1lqU/DYxh/n6KCSy+7a2DYtnBtZxE6LQhX6g/p4C2hkmMg==
   dependencies:
     "@parcel/plugin" "2.7.0"
     "@parcel/utils" "2.7.0"
@@ -684,6 +713,17 @@
     posthtml-parser "^0.10.1"
     posthtml-render "^3.0.0"
     semver "^5.7.1"
+
+"@parcel/transformer-webextension@2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@parcel/transformer-webextension/-/transformer-webextension-2.7.0.tgz#50ace08819a417d720da6dea382cca325f26c7e8"
+  integrity sha512-r7mQJ91oVnL9gMvqURlaq4ru95/685utOc51QaOfSCYjuEbosvPUIDXDRAXFVLea56iLP5nIUsrUGtycE6zsQg==
+  dependencies:
+    "@mischnic/json-sourcemap" "^0.1.0"
+    "@parcel/diagnostic" "2.7.0"
+    "@parcel/plugin" "2.7.0"
+    "@parcel/utils" "2.7.0"
+    content-security-policy-parser "^0.3.0"
 
 "@parcel/types@2.7.0":
   version "2.7.0"
@@ -969,6 +1009,11 @@ commander@^7.0.0, commander@^7.2.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-7.2.0.tgz#a36cb57d0b501ce108e4d20559a150a391d97ab7"
   integrity sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==
+
+content-security-policy-parser@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/content-security-policy-parser/-/content-security-policy-parser-0.3.0.tgz#a14d4ed54c8d098621ba46cabcd20a78be0c691e"
+  integrity sha512-ub90B4t9EfDPv3DCH7vEwGe4tVMkSm4Ow1HsmvmEQwinDfpTEDmkuJVa5WpzHDTt2bUirNRZuzL6S0msASlJhg==
 
 core-js@^3.19.2:
   version "3.25.1"
@@ -1486,7 +1531,7 @@ ordered-binary@^1.2.4:
   resolved "https://registry.yarnpkg.com/ordered-binary/-/ordered-binary-1.3.0.tgz#a116d64c923278216e335602d279750b2ebd746e"
   integrity sha512-knIeYepTI6BDAzGxqFEDGtI/iGqs57H32CInAIxEvAHG46vk1Di0CEpyc1A7iY39B1mfik3g3KLYwOTNnnMHLA==
 
-parcel@latest:
+parcel@2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/parcel/-/parcel-2.7.0.tgz#41fdd3e5c7144d4cf7f1fa3ab8d0ea0d47d31f77"
   integrity sha512-pRYwnivwtNP0tip8xYSo4zCB0XhLt7/gJzP1p8OovCqkmFjG9VG+GW9TcAKqMIo0ovEa9tT+/s6gY1Qy+BONGQ==

@@ -1,22 +1,38 @@
-name: Publish Demo Page
+name: Build Extension and Deploy Demo
 
 on:
   push:
     branches:
-      - master
+      - master # Or your main branch
 
 jobs:
-  # When a new commit is pushed to master branch, a demo site will be build and deployed 
-  deploy-demo-page:
+  build_and_deploy: # Renamed job for clarity
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Specify your node version
+          cache: 'yarn'
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build Extension
+        run: yarn build # This is: parcel build public/manifest.json --config @parcel/config-webextension ...
+
+      - name: Archive Extension
+        uses: actions/upload-artifact@v3
+        with:
+          name: extension-package
+          path: public/dist/
+          if-no-files-found: error
+
       - name: Build Demo Page
-        run: |
-          yarn install --frozen-lockfile
-          yarn build -- --public-url /react-chrome-extension-template-side-panel/
+        run: yarn build -- --public-url /react-chrome-extension-template-side-panel/ # This is the original demo build command
       
       - name: Deploy to GitHub Pages
         if: success()

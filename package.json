@@ -2,14 +2,13 @@
   "name": "react-chrome-extension-template-side-panel",
   "version": "0.2.0",
   "license": "MIT",
-  "source": "./src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "prestart": "yarn style",
-    "start": "parcel --dist-dir ./public/dist",
+    "start": "parcel watch public/manifest.json --config @parcel/config-webextension --host localhost",
     "prebuild": "yarn style && rm -rf ./public/dist",
-    "build": "parcel build --dist-dir ./public/dist --no-content-hash" ,
-    "style": "npx tailwindcss -i ./src/input.css -o ./src/tailwindcss-output.css",
+    "build": "parcel build public/manifest.json --config @parcel/config-webextension --no-content-hash --no-source-maps --no-cache",
+    "style": "npx tailwindcss -i ./src/input.css -o ./src/content.css",
     "style:watch": "yarn style -- --watch"
   },
   "dependencies": {
@@ -22,7 +21,8 @@
   "devDependencies": {
     "@types/react": "^18.0.19",
     "@types/react-dom": "^18.0.6",
-    "parcel": "latest",
+    "@parcel/config-webextension": "2.7.0",
+    "parcel": "2.7.0",
     "postcss": "^8.4.16",
     "postcss-nested": "^5.0.6",
     "process": "^0.11.10",
